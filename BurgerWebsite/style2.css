@@ -1,0 +1,44 @@
+body {
+    background-color: #FFF9F5;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.company-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #332B46;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.menubar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.menubar li {
+    float: left;
+}
+
+.menubar li a {
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    text-align: center;
+    font-family: Arial;
+    color: #332B46;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menubar li a:hover {
+    background-color: #FFA775;
+    color: white;
+}
