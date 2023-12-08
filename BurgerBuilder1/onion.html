@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+  }
+
+    .onion {
+      position: relative;
+      width: 210px;
+      height: 120px;
+      border-radius: 50%;
+      background-color: #dcacd5;
+      overflow: hidden;
+      box-shadow: 5px 7px rgb(186, 79, 182);
+      margin: 0 20px;
+    }
+
+    .ring1 {
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      left: 5%;
+      top: 5%;
+      border-radius: 50%;
+      background-color:  #dcacd5;
+      border : 10px solid white;
+    }
+    .ring2 {
+      position: absolute;
+      width: 70%;
+      height: 65%;
+      left : 15%;
+      top: 17%;
+      border-radius: 50%;
+      background-color: #dcacd5;
+      border : 10px solid  white;
+      
+    }
+    .ring3 {
+      position: absolute;
+      width: 50%;
+      height: 45%;
+      left : 25%;
+      top: 26%;
+      border-radius: 50%;
+      background-color: #dcacd5;
+      border : 10px solid  white;
+      
+    }
+ 
+   
+    
+   
+  </style>
+</head>
+<body>
+  <div class="onion">
+    <div class="ring1"></div>
+    <div class="ring2"></div>
+    <div class="ring3"></div>
+  </div>
+  <div class="onion">
+    <div class="ring1"></div>
+    <div class="ring2"></div>
+    <div class="ring3"></div>
+  </div>
+
+</body>
+</html>
