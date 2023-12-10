@@ -108,14 +108,15 @@ li {
 .container1{
     margin-left: 15px;
     margin-top: 280px;
-    width: 30%;
+    width: 40%;
     padding: 20px;
     font-family:Outfit;
     font-size: 20px;
     font-weight: bolder;
-    background-color: #ffcdb0;
     left: 0;
     border-radius: 2% ;
+    display: flex;
+    flex-wrap: wrap;
 }
 .container2 {
     margin-left: 15px;
@@ -149,21 +150,122 @@ input[type="checkbox"] {
     margin-right: 5px;
 }
 
+
+/*-------------------------------------*/
+
+
+.ButtonList {
+    
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* Ajoute un espacement entre les lignes */
+}
 button {
-    background-color:#FFA775;
-    color:black;
-    padding: 10px 20px;
+    flex: 1;
+    height: 40px; /* Ajustez la hauteur des boutons selon vos besoins */
+    box-sizing: border-box;
+}
+
+.BottomBunButton ,
+.PattyButton,
+ .CheeseButton,
+ .LettuceButton,
+ .CucumberButton,
+ .TopingsButton,
+ .TomatoButton,
+ .OnionButton{
+    height: 35px;
+    width: 100px;
+
+}
+.BottomBunButton ,
+.PattyButton, 
+.CheeseButton,
+.LettuceButton,
+.CucumberButton,
+.TopingsButton,
+.TomatoButton,
+.OnionButton{
+    height: 35px;
+    width: 100px;
+    background-color: #F48D52;
+    border: #F48D52;
+    border-radius: 12px;
+    font-weight: bold;
     font-family: Outfit;
-    font-size: 16px;
-    font-weight: bolder;
-    border-radius: 10px;
-    border: #FFA775;
+    color: #332B46;
+}
+.BottomBunButton:hover,
+.PattyButton:hover,
+.CheeseButton:hover,
+.LettuceButton:hover,
+.CucumberButton:hover,
+.TopingsButton:hover,
+.TomatoButton:hover,
+.OnionButton:hover {
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    color: white;
+    background-color: #FFA775;
+}
+.subBottomBunButton ,
+.subPattyButton,
+ .subCheeseButton,
+ .subLettuceButton,
+ .subCucumberButton,
+ .subTopingsButton,
+ .subTomatoButton,
+ .subOnionButton{
+    height: 35px;
+    width: 76px;
+    background-color: #FFD6BD;
+    border: #FFD6BD;
+    border-radius: 12px;
+    font-family: Outfit;
+    font-weight: bold;
     
 
 }
-button:hover{
-    background-color: #f1894d;
+.BottomBunButton:hover,
+.PattyButton:hover,
+.CheeseButton:hover,
+.LettuceButton:hover,
+.CucumberButton:hover,
+.TopingsButton:hover,
+.TomatoButton:hover,
+.OnionButton:hover,
+.subBottomBunButton:hover,
+.subPattyButton:hover,
+.subCheeseButton:hover,
+.subLettuceButton:hover,
+.subCucumberButton:hover,
+.subTopingsButton:hover,
+.subTomatoButton:hover,
+.subOnionButton:hover {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #FFA775;
+}
+.subButtonList{
+    display: none;
+}
+
+.FinishButton{
+    border-radius: 12px;
+    background-color: white;
+    font-family: Outfit;
+    font-weight: bold;
+    color: #332B46;
+    border: none;
+    box-shadow: 2px 5px #ffddc8;
+}
+.FinishButton:hover{
+    background-color: #FFA775;
     color: white;
 }
+
