@@ -132,8 +132,6 @@ li {
     border-radius: 50% ;
 }
 
-
-
 form {
 
     display: flex;
@@ -168,22 +166,13 @@ li {
 }
 button {
     flex: 1;
-    height: 40px; /* Ajustez la hauteur des boutons selon vos besoins */
+    height: 70px; /* Ajustez la hauteur des boutons selon vos besoins */
+    width: 200px;
     box-sizing: border-box;
+    font-size: 15px;
+    font-family: Outfit;
 }
 
-.BottomBunButton ,
-.PattyButton,
- .CheeseButton,
- .LettuceButton,
- .CucumberButton,
- .TopingsButton,
- .TomatoButton,
- .OnionButton{
-    height: 35px;
-    width: 100px;
-
-}
 .BottomBunButton ,
 .PattyButton, 
 .CheeseButton,
@@ -221,6 +210,8 @@ button {
  .subTopingsButton,
  .subTomatoButton,
  .subOnionButton{
+    margin-left:7px;
+    margin-top:9px;
     height: 35px;
     width: 76px;
     background-color: #FFD6BD;
