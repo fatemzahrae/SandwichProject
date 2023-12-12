@@ -42,70 +42,73 @@
 <div class="container">
 
     <div class=container1>
-
         <ul class="ButtonList">
 
             <li class="parentButton">
                 <button class="BottomBunButton">Bottom Bun</button>
                 <ul class="subButtonList">
-                    <li><button class="subBottomBunButton">Whole</button></li>
-                    <li><button class="subBottomBunButton">White</button></li>
+                  <li><button id="White" class="subBottomBunButton">White</button></li>                  
+                  <li><button id ="Whole" class="subBottomBunButton">Whole</button></li>
                 </ul>
             </li>
 
             <li class="parentButton">
                 <button class="PattyButton">Patty</button>
                 <ul class="subButtonList">
-                    <li><button class="subPattyButton">Beef</button></li>
-                    <li><button class="subPattyButton">Chicken</button></li>
+                    <li><button id="Beef" class="subPattyButton">Beef</button></li>
+                    <li><button id="Chicken" class="subPattyButton">Chicken</button></li>
                 </ul>
             </li>
 
             <li class="parentButton">
                 <button class="CheeseButton">Cheese</button>
                 <ul class="subButtonList">
-                    <li><button class="subCheeseButton">American</button></li>
-                    <li><button class="subCheeseButton">None</button></li>
+                    <li><button id="American" class="subCheeseButton">American</button></li>
+                    <li><button id="noneCheeseButton" class="subCheeseButton">None</button></li>
                 </ul>
             </li>
 
             <li class="parentButton">
                 <button class="LettuceButton">Lettuce</button>
                 <ul class="subButtonList">
-                    <li><button class="subLettuceButton">Green</button></li>
-                    <li><button class="subLettuceButton">None</button></li>
+                    <li><button id="Green" class="subLettuceButton">Green</button></li>
+                    <li><button id="noneLettuceButton" class="subLettuceButton">None</button></li>
                 </ul>
             </li>
             <li class="parentButton">
                 <button class="CucumberButton">Cucumber</button>
                 <ul class="subButtonList">
-                    <li><button class="subCucumberButton">Regular</button></li>
-                    <li><button class="subCucumberButton">Pickeled</button></li>
-                    <li><button class="subCucumberButton">None</button></li>
+                    <li><button id="RegularCucumber" class="subCucumberButton">Regular</button></li>
+                    <li><button id="Pickeled" class="subCucumberButton">Pickeled</button></li>
+                    <li><button id="noneCucumberButton" class="subCucumberButton">None</button></li>
                 </ul>
             </li>
             <li class="parentButton">
-                <button class="TopingsButton">Topings</button>
+                <button class="ToppingsButton">Toppings</button>
                 <ul class="subButtonList">
-                    <li><button class="subTopingsButton">Omelette</button></li>
-                    <li><button class="subTopingsButton">Pepperoni</button></li>
-                    <li><button class="subTopingsButton">None</button></li>
+                    <li><button id ="Omelette" class="subToppingsButton">Omelette</button></li>
+                    <li><button id="PepperoniSlices" class="subPepperoniButton">Pepperoni</button></li>
+                    <li><button id="noneToppingsButton" class="subToppingsButton">None</button></li>
                 </ul>
             </li>
+
             <li class="parentButton">
-                <button class="TomatoButton">Tomato</button>
-                <ul class="subButtonList">
-                    <li><button class="subTomatoButton">Regular</button></li>
-                    <li><button class="subTomatoButton">None</button></li>
-                </ul>
-            </li>
+              <button class="OnionButton">Onion</button>
+              <ul class="subButtonList">
+                  <li><button id="RegularOnion"class="subOnionButton">Regular</button></li>
+                  <li><button id="noneOnionButton" class="subOnionButton">None</button></li>
+              </ul>
+          </li>
+
+          
             <li class="parentButton">
-                <button class="OnionButton">Onion</button>
-                <ul class="subButtonList">
-                    <li><button class="subOnionButton">Regular</button></li>
-                    <li><button class="subOnionButton">None</button></li>
-                </ul>
-            </li>
+              <button class="TomatoButton">Tomato</button>
+              <ul class="subButtonList">
+                  <li><button id ="RegularTomato" class="subTomatoButton">Regular</button></li>
+                  <li><button id ="noneTomatoButton" class="subTomatoButton">None</button></li>
+              </ul>
+          </li>
+
             <li class="FinishButton">
                 <button class = "FinishButton">Finish</button>
             </li>
@@ -130,18 +133,18 @@
     </div>
     <div class="content">
         <div class="burger">
-            <div class="bottomBun">
+            <div class="bottomBun hidden">
                 <div class="TopOvalLB"></div>
                 <div class="BottomOvalLB"></div>
             </div>
-            <!--<div class="bottomBunWheat">
+            <div class="bottomBunWheat hidden">
               <div class="TopOvalLBWheat"></div>
               <div class="BottomOvalLBWheat"></div>
-            </div>-->
+            </div>
     
     
     
-            <div class="Meatpatty">
+            <div class="Meatpatty hidden">
                 <div class="Meatgrill-mark">
                   <div class="Meatgrill-mark1"></div>
                   <div class="Meatgrill-mark2"></div>
@@ -158,7 +161,7 @@
                 <div class="MeatBottomOval"></div>
               </div>
     
-              <!--<div class="Chickenpatty">
+              <div class="Chickenpatty hidden">
                 <div class="Chickengrill-mark">
                   <div class="Chickengrill-mark1"></div>
                   <div class="Chickengrill-mark2"></div>
@@ -173,17 +176,17 @@
                 <div class="ChickenTopTop"></div>
                 <div class="ChickenTopOval"></div>
                 <div class="ChickenBottomOval"></div>
-              </div>-->
+              </div>
     
     
-              <div class="Cheese">
+              <div class="Cheese hidden">
                 <div class="toptopCheese"></div>
                 <div class="topSquare"></div>
                 <div class="bottomSquare"></div>
               </div>
     
     
-              <div class="lettuce">
+              <div class="lettuce hidden">
                 <div class="lettuceTop">
                   <div class="c1"></div>
                   <div class="c2"></div>
@@ -211,7 +214,7 @@
               </div>
     
     
-              <div class="Pickeledcucumber">
+              <div class="Pickeledcucumber hidden">
                 <div class="pp1"></div>
                 <div class="pp2"></div>
                 <div class="pp3"></div>
@@ -228,7 +231,7 @@
               <div class="ptop2"></div>
               <div class="ptop3"></div>
             </div>
-            <div class="Pickeledcucumber2">
+            <div class="Pickeledcucumber2 hidden">
               <div class="pp1"></div>
               <div class="pp2"></div>
               <div class="pp3"></div>
@@ -246,7 +249,7 @@
             <div class="ptop3"></div>
             </div>
     
-            <div class="cucumber">
+            <div class="cucumber hidden">
                   <div class="p1"></div>
                   <div class="p2"></div>
                   <div class="p3"></div>
@@ -265,7 +268,7 @@
               </div>
     
     
-              <div class="Omelette">
+              <div class="Omelette hidden">
                 <div class="W1"></div>
                 <div class="W2"></div>
                 <div class="W3"></div>
@@ -278,7 +281,7 @@
               </div>
     
               
-              <div class="pepperoni1">
+              <div class="pepperoni1 hidden">
                 <div class="ppp1"></div>
                 <div class="ppp2"></div>
                 <div class="pC3"></div>
@@ -293,7 +296,7 @@
                 <div class="pC12"></div>
                 <div class="pC13"></div>
               </div>
-              <div class="pepperoni2">
+              <div class="pepperoni2 hidden">
                 <div class="ppp1"></div>
                 <div class="ppp2"></div>
                 <div class="pC3"></div>
@@ -308,7 +311,7 @@
                 <div class="pC12"></div>
                 <div class="pC13"></div>
               </div>
-              <div class="pepperoni3">
+              <div class="pepperoni3 hidden">
                 <div class="ppp1"></div>
                 <div class="ppp2"></div>
                 <div class="pC3"></div>
@@ -323,7 +326,7 @@
                 <div class="pC12"></div>
                 <div class="pC13"></div>
               </div>
-              <div class="pepperoni4">
+              <div class="pepperoni4 hidden">
                 <div class="ppp1"></div>
                 <div class="ppp2"></div>
                 <div class="pC3"></div>
@@ -340,17 +343,17 @@
               </div>
     
     
-              <div class="onion1">
+              <div class="onion1 hidden">
                 <div class="ring1"></div>
                 <div class="ring2"></div>
                 <div class="ring3"></div>
               </div>
-              <div class="onion">
+              <div class="onion hidden">
                 <div class="ring1"></div>
                 <div class="ring2"></div>
                 <div class="ring3"></div>
               </div>
-            <div class="tomato">
+            <div class="tomato hidden">
                 <div class="rightPart">
                     <div class="grains1"></div> 
                     <div class="grains1"></div> 
@@ -362,7 +365,7 @@
                     <div class="grains2"></div>
                 </div>
             </div>
-            <div class="tomato1">
+            <div class="tomato1 hidden">
               <div class="rightPart">
                   <div class="grains1"></div> 
                   <div class="grains1"></div> 
@@ -374,7 +377,7 @@
                   <div class="grains2"></div>
               </div>
             </div>
-            <div class="tomato2">
+            <div class="tomato2 hidden">
               <div class="rightPart">
                   <div class="grains1"></div> 
                   <div class="grains1"></div> 
@@ -387,7 +390,7 @@
               </div>
             </div>
 
-            <div class="topBun">
+            <div class="topBun hidden">
               <div class="cer1"></div>
               <div class="cer2"></div>
               <div class="Cercle"></div>
@@ -396,14 +399,14 @@
               <div class="BottombottomOvalTB"></div>
             </div>
     
-            <!--<div class="topBunWheat">
+            <div class="topBunWheat hidden">
                 <div class="cer1"></div>
                 <div class="cer2"></div>
                 <div class="CercleW"></div>
                 <div class="TopOvalTBW"></div>
                 <div class="BottomOvalTBW"></div>
                 <div class="BottombottomOvalTBW"></div>
-              </div>-->
+              </div>
     
         </div>
     </div>

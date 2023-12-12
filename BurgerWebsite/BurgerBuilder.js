@@ -1,71 +1,323 @@
 document.addEventListener('DOMContentLoaded', function () {
     const parentButtons = document.querySelectorAll('.parentButton');
-    let lastActivatedParent = null;
+    let currentActiveIndex = 0;
+
+    function activateParentButton(index) {
+        const currentButton = parentButtons[index];
+        const mainButton = currentButton.querySelector('button');
+        const subButtonList = currentButton.querySelector('.subButtonList');
+
+        subButtonList.style.display = 'block';
+        mainButton.style.backgroundColor = '#F48D52';
+        mainButton.style.pointerEvents = 'auto';
+    }
+
+    function deactivateParentButton(index) {
+        const currentButton = parentButtons[index];
+        const mainButton = currentButton.querySelector('button');
+        const subButtonList = currentButton.querySelector('.subButtonList');
+
+        subButtonList.style.display = 'none';
+        mainButton.style.backgroundColor = '#b7b7b7';
+        mainButton.style.pointerEvents = 'none';
+    }
+
+    function activateSubButton(subButton) {
+        subButton.style.backgroundColor = '#FF7233';
+        subButton.style.color = 'white';
+        subButton.classList.add('selected');
+    }
+
+    function deactivateSubButtons(subButtons) {
+        subButtons.forEach(function (subButton) {
+            subButton.style.backgroundColor = '#FFD6BD';
+            subButton.style.color = 'initial';
+            subButton.classList.remove('selected');
+        });
+    }
+
+    function handleSubButtonClick(subButton) {
+        const subButtons = subButton.parentNode.querySelectorAll('button');
+
+        if (subButton.classList.contains('none')) {
+            // Clicked on "None"
+            deactivateSubButtons(subButtons);
+        } else {
+            // Clicked on a subButton other than "None"
+            const noneButton = subButton.parentNode.querySelector('.none');
+            if (noneButton) {
+                deactivateSubButtons([noneButton]);
+            }
+        }
+
+        activateSubButton(subButton);
+        // Handle the logic for the clicked sub-button (if needed)
+    }
+
+    // Activate the first parent button
+    activateParentButton(currentActiveIndex);
 
     parentButtons.forEach(function (button, index) {
         const mainButton = button.querySelector('button');
         const subButtonList = button.querySelector('.subButtonList');
-        let parentActivated = false;
 
         mainButton.addEventListener('click', function () {
-            if (!parentActivated) {
-                if (lastActivatedParent !== null) {
-                    
-                    return;
-                }
-
-                subButtonList.style.display = 'block';
-                parentActivated = true;
-                lastActivatedParent = index;
-
-                parentButtons.forEach(function (otherButton, otherIndex) {
-                    if (index !== otherIndex) {
-                        const otherMainButton = otherButton.querySelector('button');
-                        const otherSubButtonList = otherButton.querySelector('.subButtonList');
-                        otherSubButtonList.style.display = 'none';
-                        otherMainButton.style.backgroundColor = '#b7b7b7';
-                    }
-                });
-            } else {
-                subButtonList.style.display = 'none';
+            if (index === currentActiveIndex) {
+                // Clicking on the active parent button
+                // Handle the logic for the clicked sub-button (if needed)
+            } else if (index === currentActiveIndex + 1) {
+                // Clicking on the next parent button
+                deactivateParentButton(currentActiveIndex);
+                currentActiveIndex = index;
+                activateParentButton(currentActiveIndex);
             }
+            // You can add additional conditions or logic for other cases if needed
         });
 
         const subButtons = subButtonList.querySelectorAll('button');
 
         subButtons.forEach(function (subButton) {
             subButton.addEventListener('click', function () {
-                
-                subButton.style.backgroundColor = '#FF7233';
-                subButton.style.Color = 'white';
-
-                
-                const previousSubButton = subButtonList.querySelector('.selected');
-                if (previousSubButton && previousSubButton !== subButton) {
-                    previousSubButton.style.backgroundColor = '#FFD6BD';
-                }
-
-                
-                subButton.classList.add('selected');
-
-                
-                for (let i = 0; i < lastActivatedParent; i++) {
-                    const previousParentButton = parentButtons[i].querySelector('button');
-                    const previousSubButtonList = parentButtons[i].querySelector('.subButtonList');
-                    previousSubButtonList.style.pointerEvents = 'none';
-                    previousParentButton.style.backgroundColor = '#b7b7b7';
-                }
-
-                
-                if (index < parentButtons.length - 1) {
-                    const nextMainButton = parentButtons[index + 1].querySelector('button');
-                    const nextSubButtonList = parentButtons[index + 1].querySelector('.subButtonList');
-                    nextSubButtonList.style.display = 'block';
-                    nextMainButton.style.backgroundColor = '#F48D52';
-                    parentActivated = true;
-                    lastActivatedParent = index + 1;
-                }
+                deactivateSubButtons(subButtons);
+                handleSubButtonClick(subButton);
             });
         });
     });
+});
+
+// JavaScript function to add ingredients and toggle visibility
+function addIngredient(ingredient) {
+    // Toggle the visibility of the selected ingredient
+    ingredient.classList.toggle("hidden");
+}
+
+// Get references to the buttons
+var bottomBunButton = document.getElementById("White");
+var bottomBunWheatButton = document.getElementById("Whole");
+var meatPattyButton = document.getElementById("Beef");
+var chickenPattyButton = document.getElementById("Chicken");
+var cheeseButton = document.getElementById("American");
+var lettuceButton = document.getElementById("Green");
+var cucumberButton = document.getElementById("RegularCucumber");
+var pickledCucumberButton = document.getElementById("Pickeled");
+var omeletteButton = document.getElementById("Omelette");
+var pepperoniSlicesButton = document.getElementById("PepperoniSlices");
+var tomatoButton = document.getElementById("RegularTomato");
+var onionButton = document.getElementById("RegularOnion");
+
+var noneCheeseButton = document.getElementById("noneCheeseButton");
+var noneLettuceButton = document.getElementById("noneLettuceButton");
+var noneCucumberButton = document.getElementById("noneCucumberButton");
+var noneToppingsButton = document.getElementById("noneToppingsButton");
+var noneOnionButton = document.getElementById("noneOnionButton");
+var noneTomatoButton = document.getElementById("noneTomatoButton");
+
+
+var finishButton = document.querySelector(".FinishButton");
+
+// Get references to the corresponding ingredient elements
+var bottomBun = document.querySelector(".bottomBun");
+var bottomBunWheat = document.querySelector(".bottomBunWheat");
+var meatPatty = document.querySelector(".Meatpatty");
+var chickenPatty = document.querySelector(".Chickenpatty");
+var cheese = document.querySelector(".Cheese");
+var lettuce = document.querySelector(".lettuce");
+var cucumber = document.querySelector(".cucumber");
+var pickledCucumber = document.querySelector(".Pickeledcucumber");
+var pickledCucumber2 = document.querySelector(".Pickeledcucumber2");
+var omelette = document.querySelector(".Omelette");
+var pepperoni1 = document.querySelector(".pepperoni1");
+var pepperoni2 = document.querySelector(".pepperoni2");
+var pepperoni3 = document.querySelector(".pepperoni3");
+var pepperoni4 = document.querySelector(".pepperoni4");
+var tomato = document.querySelector(".tomato");
+var tomato1 = document.querySelector(".tomato1");
+var tomato2 = document.querySelector(".tomato2");
+var onion1 = document.querySelector(".onion1");
+var onion = document.querySelector(".onion");
+var topBun = document.querySelector(".topBun");
+var topBunWheat = document.querySelector(".topBunWheat");
+
+// Add click event listeners to the buttons
+bottomBunButton.addEventListener("click", function () {
+    addIngredient(bottomBun);
+});
+
+bottomBunWheatButton.addEventListener("click", function () {
+    addIngredient(bottomBunWheat);
+});
+
+meatPattyButton.addEventListener("click", function () {
+    addIngredient(meatPatty);
+});
+
+chickenPattyButton.addEventListener("click", function () {
+    addIngredient(chickenPatty);
+});
+
+cheeseButton.addEventListener("click", function () {
+    addIngredient(cheese);
+});
+
+lettuceButton.addEventListener("click", function () {
+    addIngredient(lettuce);
+});
+
+cucumberButton.addEventListener("click", function () {
+    addIngredient(cucumber);
+});
+
+pickledCucumberButton.addEventListener("click", function () {
+    addIngredient(pickledCucumber);
+    addIngredient(pickledCucumber2);
+});
+
+omeletteButton.addEventListener("click", function () {
+    addIngredient(omelette);
+});
+
+tomatoButton.addEventListener("click", function () {
+    addIngredient(tomato);
+    addIngredient(tomato1);
+    addIngredient(tomato2);
+});
+
+
+onionButton.addEventListener("click", function () {
+    addIngredient(onion1);
+    addIngredient(onion);
+});
+
+pepperoniSlicesButton.addEventListener("click", function () {
+    addIngredient(pepperoni1);
+    addIngredient(pepperoni2);
+    addIngredient(pepperoni3);
+    addIngredient(pepperoni4);
+});
+
+
+noneLettuceButton.addEventListener("click", function () {
+    if (lettuce.classList.contains("hidden")) {
+        return;
+    } 
+    else {
+        lettuce.classList.add("hidden");
+    }
+});
+
+noneCheeseButton.addEventListener("click", function () {
+    if (cheese.classList.contains("hidden")) {
+        return;
+    } 
+    else {
+        cheese.classList.add("hidden");
+    }
+});
+
+noneCucumberButton.addEventListener("click", function () {
+if (cucumber.classList.contains("hidden")) {
+        return;
+    } 
+    else {
+        cucumber.classList.add("hidden");
+    }
+if (pickledCucumber.classList.contains("hidden")) {
+        return;
+    } 
+    else {
+        pickledCucumber.classList.add("hidden");
+    }
+if (pickledCucumber2.classList.contains("hidden")) {
+        return;
+    } 
+    else {
+        pickledCucumber2.classList.add("hidden");
+    }
+});
+
+noneToppingsButton.addEventListener("click", function () {
+    if (omelette.classList.contains("hidden")) {
+        return;
+    } 
+    else {
+        omelette.classList.add("hidden");
+    }
+if (pepperoni1.classList.contains("hidden")) {
+        return;
+    } 
+    else {
+        pepperoni1.classList.add("hidden");
+    }
+if (pepperoni2.classList.contains("hidden")) {
+        return;
+    } 
+    else {
+        pepperoni2.classList.add("hidden");
+    }
+if (pepperoni3.classList.contains("hidden")) {
+        return;
+    } 
+    else {
+        pepperoni3.classList.add("hidden");
+    }
+if (pepperoni4.classList.contains("hidden")) {
+        return;
+    } 
+    else {
+        pepperoni4.classList.add("hidden");
+    }
+});
+
+noneTomatoButton.addEventListener("click", function () {
+if (tomato.classList.contains("hidden")) {
+        return;
+    } 
+    else {
+        tomato.classList.add("hidden");
+    }
+if (tomato1.classList.contains("hidden")) {
+        return;
+    } 
+    else {
+        tomato1.classList.add("hidden");
+    }
+if (tomato2.classList.contains("hidden")) {
+        return;
+    } 
+    else {
+        tomato2.classList.add("hidden");
+    }
+});
+
+noneOnionButton.addEventListener("click", function () {
+    if (onion.classList.contains("hidden")) {
+        return;
+    } 
+    else {
+        onion.classList.add("hidden");
+    }
+if (onion1.classList.contains("hidden")) {
+        return;
+    } 
+    else {
+        onion1.classList.add("hidden");
+    }
+});
+
+finishButton.addEventListener("click", function () {
+    const selectedBottomBun = document.querySelector(".subBottomBunButton.selected");
+
+    if (selectedBottomBun) {
+        const bottomBunType = selectedBottomBun.id;
+
+        const topBuns = document.querySelectorAll(".topBun, .topBunWheat");
+        topBuns.forEach(function (topBun) {
+            topBun.classList.add("hidden");
+        });
+
+        const topBunToShow = document.querySelector(`.${bottomBunType === "White" ? "topBun" : "topBunWheat"}`);
+        if (topBunToShow) {
+            topBunToShow.classList.remove("hidden");
+        }
+    }
 });
