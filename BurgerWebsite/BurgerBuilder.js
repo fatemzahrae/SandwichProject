@@ -1,3 +1,5 @@
+const buttonListContainer = document.querySelector('.ButtonList');
+const plate = document.querySelector('.plate');
 document.addEventListener('DOMContentLoaded', function () {
     const parentButtons = document.querySelectorAll('.parentButton');
     let currentActiveIndex = 0;
@@ -85,13 +87,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// JavaScript function to add ingredients and toggle visibility
+
 function addIngredient(ingredient) {
-    // Toggle the visibility of the selected ingredient
+    
     ingredient.classList.toggle("hidden");
 }
 
-// Get references to the buttons
+
 var bottomBunButton = document.getElementById("White");
 var bottomBunWheatButton = document.getElementById("Whole");
 var meatPattyButton = document.getElementById("Beef");
@@ -115,7 +117,7 @@ var noneTomatoButton = document.getElementById("noneTomatoButton");
 
 var finishButton = document.querySelector(".FinishButton");
 
-// Get references to the corresponding ingredient elements
+
 var bottomBun = document.querySelector(".bottomBun");
 var bottomBunWheat = document.querySelector(".bottomBunWheat");
 var meatPatty = document.querySelector(".Meatpatty");
@@ -137,22 +139,28 @@ var onion1 = document.querySelector(".onion1");
 var onion = document.querySelector(".onion");
 var topBun = document.querySelector(".topBun");
 var topBunWheat = document.querySelector(".topBunWheat");
+var maker = document.querySelector(".maker");
 
-// Add click event listeners to the buttons
+
 bottomBunButton.addEventListener("click", function () {
+    bottomBunWheat.classList.add("hidden")
     addIngredient(bottomBun);
+
 });
 
 bottomBunWheatButton.addEventListener("click", function () {
+    bottomBun.classList.add("hidden")
     addIngredient(bottomBunWheat);
 });
 
 meatPattyButton.addEventListener("click", function () {
     addIngredient(meatPatty);
+    chickenPatty.classList.add("hidden");
 });
 
 chickenPattyButton.addEventListener("click", function () {
     addIngredient(chickenPatty);
+    meatPatty.classList.add("hidden");
 });
 
 cheeseButton.addEventListener("click", function () {
@@ -320,4 +328,10 @@ finishButton.addEventListener("click", function () {
             topBunToShow.classList.remove("hidden");
         }
     }
+
+    const appetitText = document.querySelector(".Appetit");
+    appetitText.classList.remove("hidden");
+    maker.classList.add("hidden");
+    buttonListContainer.style.display = "none";
+    plate.classList.remove("hidden");
 });

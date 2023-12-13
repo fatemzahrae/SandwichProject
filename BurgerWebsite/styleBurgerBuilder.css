@@ -27,6 +27,107 @@ body {
 .content{
     margin-top: 100px;
 }
+.maker{
+  font-family: Outfit;
+  color: #332B46;
+  position: absolute;
+  top: 75px;
+  left:77px;
+}
+
+.BurgerText{
+  font-family: Ananda;
+  color:#FF9357;
+  margin-left: 3px;
+  margin-right:3px;
+  font-weight: bolder;
+  font-size: 110%;
+}
+
+/* Add this CSS for the "Appetit" text animation */
+@keyframes appearAnimation {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes appearAnimation1 {
+  0% {
+      opacity: 0;
+      transform: translateX(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+@keyframes tossFromAbove {
+  0% {
+      opacity: 0;
+      transform: translateY(-100%);
+      z-index: 200;
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+      z-index: 200;
+  }
+}
+
+.bottomBun,
+.bottomBunWheat,
+.Meatpatty,
+.Chickenpatty,
+.Cheese,
+.lettuce,
+.cucumber,
+.Pickeledcucumber,
+.Pickeledcucumber2,
+.tomato,
+.tomato1,
+.tomato2,
+.onion,
+.onion1,
+.Omelette,
+.pepperoni1,
+.pepperoni2,
+.pepperoni3,
+.pepperoni4,
+.topBun,
+.topBunWheat
+{
+    animation: tossFromAbove 0.4s ease-out;
+ }
+
+.Appetit {
+  opacity: 0;
+  animation: appearAnimation 0.5s ease-out forwards;
+  font-family: Ananda;
+  color: #332B46;
+  position: absolute;
+  top: 180px;
+  left: 100px;
+  font-size: 350%;
+  font-weight: bolder;
+}
+
+.ppetit {
+  text-decoration: underline;
+  text-decoration-color: #FF9357;
+}
+
+.A {
+  font-size: 140%;
+  color: #FF9357;
+}
+
+
 ul {
     list-style-type: none;
     margin: 10px;
@@ -110,7 +211,7 @@ li {
   
 .container1{
     margin-left: 20px;
-    margin-top: 70px;
+    margin-top: 90px;
     width: 40%;
     padding: 20px;
     font-family:Outfit;
@@ -271,7 +372,42 @@ button {
 .burger{
     position:absolute;
     left:50%;
-    top:50%;
+    top:47%;
+  }
+
+
+  .OvalPlate1{
+    animation: appearAnimation1 0.8s ease-out forwards;
+    position: absolute;
+    top:48%;
+    left:47%;
+    border-radius: 50%;
+    background-color: #ADC1CC;
+    height:285px;
+    width:550px;
+    z-index: 93;
+  }
+  .OvalPlate2{
+    animation: appearAnimation1 0.8s ease-out forwards;
+    position: absolute;
+    top:44%;
+    left:42%;
+    border-radius: 50%;
+    background-color:#D1DEE6;
+    height:340px;
+    width:690px;
+    z-index: 92;
+  }
+  .OvalPlate3{
+    animation: appearAnimation1 0.8s ease-out forwards;
+    position: absolute;
+    top:76%;
+    left:50.5%;
+    border-radius: 50%;
+    background-color:#ADC1CC;
+    height:150px;
+    width:450px;
+    z-index: 91;
   }
   .bottomBun{
     position: absolute;
