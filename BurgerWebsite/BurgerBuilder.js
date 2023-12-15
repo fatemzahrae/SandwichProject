@@ -42,10 +42,10 @@ document.addEventListener('DOMContentLoaded', function () {
         const subButtons = subButton.parentNode.querySelectorAll('button');
 
         if (subButton.classList.contains('none')) {
-            // Clicked on "None"
+            
             deactivateSubButtons(subButtons);
         } else {
-            // Clicked on a subButton other than "None"
+            
             const noneButton = subButton.parentNode.querySelector('.none');
             if (noneButton) {
                 deactivateSubButtons([noneButton]);
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         activateSubButton(subButton);
-        // Handle the logic for the clicked sub-button (if needed)
+        
     }
 
     // Activate the first parent button
@@ -66,14 +66,14 @@ document.addEventListener('DOMContentLoaded', function () {
         mainButton.addEventListener('click', function () {
             if (index === currentActiveIndex) {
                 // Clicking on the active parent button
-                // Handle the logic for the clicked sub-button (if needed)
+                
             } else if (index === currentActiveIndex + 1) {
                 // Clicking on the next parent button
                 deactivateParentButton(currentActiveIndex);
                 currentActiveIndex = index;
                 activateParentButton(currentActiveIndex);
             }
-            // You can add additional conditions or logic for other cases if needed
+            
         });
 
         const subButtons = subButtonList.querySelectorAll('button');
