@@ -1,10 +1,10 @@
 @font-face {
     font-family: Outfit;
-    src: url(Outfit-VariableFont_wght.ttf);
+    src: url(imagesAndFonts\Outfit-VariableFont_wght.ttf);
 }
 @font-face {
     font-family: Ananda;
-    src: url(Ananda_Personal_Use.ttf);
+    src: url(imagesAndFonts\Ananda_Personal_Use.ttf);
 }
 .hidden{
   display: none;
@@ -44,7 +44,6 @@ body {
   font-size: 110%;
 }
 
-/* Add this CSS for the "Appetit" text animation */
 @keyframes appearAnimation {
   0% {
       opacity: 0;
