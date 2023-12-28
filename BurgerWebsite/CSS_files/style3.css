@@ -1,10 +1,10 @@
 @font-face {
     font-family: Outfit;
-    src: url(Outfit-VariableFont_wght.ttf);
+    src: url(imagesAndFonts/Outfit-VariableFont_wght.ttf);
 }
 @font-face {
     font-family: Ananda;
-    src: url(Ananda_Personal_Use.ttf);
+    src: url(imagesAndFonts/Ananda_Personal_Use.ttf);
 }
 body {
     margin: 0;
